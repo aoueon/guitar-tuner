@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body, .site {
+	height: 100%;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 18px;
+}
+
+.site {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.panel-left {
+
+}
+.panel-right {
+	padding: 50px;
+}
+
+
+.strings {
+    display: flex;
+	align-items: stretch;
+	height: 100%;
+}
+.string {
+    padding: 0 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.string-button {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background: white;
+	border: 1px solid gray;
+	background-color: #ccc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.string-button:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+.string-line {
+    background-color: #333;
+    height: 100%;
+    width: 5px;
+	position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.string:nth-of-type(1) .string-line {
+	width: 7px;
+}
+.string:nth-of-type(2) .string-line {
+	width: 6px;
+}
+.string:nth-of-type(3) .string-line {
+	width: 5px;
+}
+.string:nth-of-type(4) .string-line {
+	width: 4px;
+}
+.string:nth-of-type(5) .string-line {
+	width: 3px;
+}
+.string:nth-of-type(6) .string-line {
+	width: 2px;
+}
+
+.string-button:hover {
+	box-shadow: 0 0 15px gray;
+}
+.string.active .string-button {
+	box-shadow: 0 0 15px green;
+}
