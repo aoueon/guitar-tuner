@@ -27,4 +27,48 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 	)
+
+	window.addEventListener("keydown", checkKeyPressed, false);
+
+	function checkKeyPressed(event) {
+		// number 1
+	    if (event.keyCode == "49") {
+			eventFire(document.querySelector('.string:nth-of-type(1)'), 'click');
+	    }
+		// number 2
+	    if (event.keyCode == "50") {
+	        eventFire(document.querySelector('.string:nth-of-type(2)'), 'click');
+	    }
+		// number 3
+	    if (event.keyCode == "51") {
+	        eventFire(document.querySelector('.string:nth-of-type(3)'), 'click');
+	    }
+		// number 4
+	    if (event.keyCode == "52") {
+	        eventFire(document.querySelector('.string:nth-of-type(4)'), 'click');
+	    }
+		// number 5
+	    if (event.keyCode == "53") {
+	        eventFire(document.querySelector('.string:nth-of-type(5)'), 'click');
+	    }
+		// number 6
+	    if (event.keyCode == "54") {
+	        eventFire(document.querySelector('.string:nth-of-type(6)'), 'click');
+	    }
+		// space
+	    if (event.keyCode == "32") {
+	        alert("You pressed 'space'.");
+	    }
+	}
+
+	function eventFire(el, etype){
+	  if (el.fireEvent) {
+	    el.fireEvent('on' + etype);
+	  } else {
+	    var evObj = document.createEvent('Events');
+	    evObj.initEvent(etype, true, false);
+	    el.dispatchEvent(evObj);
+	  }
+	}
+
 })
