@@ -7,21 +7,33 @@ html, body, .site {
 }
 
 body {
-	font-family: "Fira Mono", monospace;
-	font-size: 18px;
+	font-family: "Fira Sans", sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	-webkit-text-size-adjust: 100%;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
 .site {
-	max-width: 1200px;
+	/* max-width: 1200px; */
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 }
 .panel-left {
-
+	padding-left: 80px;
+	padding-right: 50px;
+	overflow: hidden;
 }
 .panel-right {
 	padding: 50px;
+	text-align: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 
@@ -29,9 +41,10 @@ body {
     display: flex;
 	align-items: stretch;
 	height: 100%;
+	transform: rotate(-3deg) scale(1.1);
 }
 .string {
-    padding: 0 20px;
+    padding: 0 13px;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -40,24 +53,23 @@ body {
 	user-select: none;
 }
 .string-button {
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-	background: white;
-	border: 1px solid gray;
-	background-color: #ccc;
+	height: 60px;
+	width: 60px;
+	border-radius: 14px;
+	background-color: white;
+	font-size: 28px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-}
-.string-button:nth-of-type(even) {
-	background-color: #f3f3f3;
+	box-sizing: border-box;
+	box-shadow: inset 0 0 0 3px #a7e08a;
+	font-weight: bold;
+	position: relative;
+	transform: rotate(3deg);
 }
 .string-line {
-    background-color: #333;
+    background-color: #8ea08c;
     height: 100%;
-    width: 5px;
 	position: absolute;
     z-index: -1;
     left: 0;
@@ -83,9 +95,48 @@ body {
 	width: 2px;
 }
 
+.string:nth-of-type(1) .string-button {
+	top: -40px;
+}
+.string:nth-of-type(2) .string-button {
+	top: -35px;
+}
+.string:nth-of-type(3) .string-button {
+	top: -30px;
+}
+.string:nth-of-type(4) .string-button {
+	top: -25px;
+}
+.string:nth-of-type(5) .string-button {
+	top: -20px;
+}
+.string:nth-of-type(6) .string-button {
+	top: -15px;
+}
+
 .string:hover .string-button {
-	box-shadow: 0 0 15px gray;
+	background-color: #f5f5f5;
 }
 .string.active .string-button {
-	box-shadow: 0 0 15px green;
+	background-color: #87cc65;
+	color: white;
+	transform: scale(1.1) rotate(3deg);
+	font-size: 35px;
+}
+.string.active .string-line {
+    box-shadow: 0 0 10px #ff00004d;
+}
+
+.key {
+	background-color: #e5e5e5;
+	text-transform: uppercase;
+	font-size: 80%;
+	padding: 6px 10px;
+	border-radius: 2px;
+	letter-spacing: 1px;
+}
+svg.inline-icon {
+    vertical-align: middle;
+    margin-right: 10px;
+    fill: #b7b7b7;
 }
