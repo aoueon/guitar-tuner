@@ -1,4 +1,4 @@
-### Guitar Tuner
+# Guitar Tuner
 ## Made by Raoul Simionas
 
 Tune your guitar by ear. Use the space key to advance. Use arrow keys to go forward or backward. Use 1-6 keys to trigger specific string. Use enter to stop.
