@@ -36,6 +36,15 @@ body {
 	justify-content: space-between;
 }
 
+.select-button {
+	padding: 14px;
+	display: inline-block;
+	border-radius: 3px;
+	border: none;
+	background-color: #eee;
+	margin-top: 20px;
+}
+
 
 .strings {
     display: flex;

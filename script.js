@@ -1,3 +1,11 @@
+/*
+TO DO:
+
+1. Auto-advance notes after 4 iterations, advance manually with space bar.
+2. Press enter to stop.
+3. Press down arrow to play same note again manually.
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	const strings = document.querySelectorAll('.string'),
@@ -14,8 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 					}
 				}
 
+				var repeat = function() {
+					document.getElementById(string_id).currentTime = 0;
+					document.getElementById(string_id).play();
+				};
+
 				if ( this.classList.contains('active') ) {
-					// this.classList.remove('active');
 					document.getElementById(string_id).currentTime = 0;
 				} else {
 					this.classList.add('active');
@@ -56,9 +68,40 @@ document.addEventListener('DOMContentLoaded', () => {
 	    if (event.keyCode == "54") {
 	        eventFire(document.querySelector('.string:nth-of-type(6)'), 'click');
 	    }
-		// space
-	    if (event.keyCode == "32") {
+		// space or right arrow
+	    if (event.keyCode == "32" || event.keyCode == "39") {
+			var active = document.querySelector('.string.active');
+			if ( active ) {
+				if ( document.querySelector('.string.active + .string') == null ) {
+					eventFire( document.querySelector('.string:first-of-type'), 'click');
+				} else {
+					eventFire( document.querySelector('.string.active + .string'), 'click');
+				}
+			} else {
+				eventFire( document.querySelector('.string:first-of-type'), 'click');
+			}
+		}
+		// enter
+	    if (event.keyCode == "13") {
 	        stopAll();
+	    }
+		// left arrow
+	    if (event.keyCode == "37") {
+			var active = document.querySelector('.string.active');
+			if ( active ) {
+				if ( document.querySelector('.string:first-of-type').classList.contains('active') ) {
+					eventFire( document.querySelector('.string:last-of-type'), 'click');
+				} else {
+					eventFire( document.querySelector('.string.active').previousElementSibling, 'click');
+				}
+			} else {
+				eventFire( document.querySelector('.string:last-of-type'), 'click');
+			}
+	    }
+		// down and up arrow
+	    if (event.keyCode == "40" || event.keyCode == "38") {
+			var string_id = document.querySelector('.string.active').dataset.string;
+			document.getElementById(string_id).currentTime = 0;
 	    }
 	}
 
