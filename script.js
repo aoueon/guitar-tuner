@@ -15,9 +15,9 @@ const tuning = {
 		label: "Drop D",
 		notes: ['d2', 'a2', 'd3', 'g3', 'b3', 'e4']
 	},
-	openD: {
-		label: "Open D",
-		notes: ['d2', 'a2', 'd3', 'f#3', 'a4', 'd4']
+	dadgad: {
+		label: "DADGAD",
+		notes: ['d2', 'a2', 'd3', 'g3', 'a4', 'd4']
 	},
 };
 

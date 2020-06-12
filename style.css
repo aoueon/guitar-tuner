@@ -2,7 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
-html, body, .site {
+html,
+body,
+.site {
 	height: 100%;
 }
 
@@ -37,23 +39,30 @@ body {
 }
 
 .select-button {
-	padding: 14px;
-	display: inline-block;
+	padding: 7px 11px;
+	display: inline-flex;
+	align-items: center;
 	border-radius: 3px;
 	border: none;
-	background-color: #eee;
+	background-color: #eae9e9;
 	margin-top: 20px;
+	-webkit-appearance: none;
+	cursor: pointer;
+	background-size: 13px;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 11px) center;
+	background-image: url(svg/dropdown.svg);
+	padding-right: 34px;
 }
 
-
 .strings {
-    display: flex;
+	display: flex;
 	align-items: stretch;
 	height: 100%;
 	transform: rotate(-3deg) scale(1.1);
 }
 .string {
-    padding: 0 13px;
+	padding: 0 13px;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -77,13 +86,13 @@ body {
 	transform: rotate(3deg);
 }
 .string-line {
-    background-color: #8ea08c;
-    height: 100%;
+	background-color: #8ea08c;
+	height: 100%;
 	position: absolute;
-    z-index: -1;
-    left: 0;
-    right: 0;
-    margin: auto;
+	z-index: -1;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 .string:nth-of-type(1) .string-line {
 	width: 7px;
@@ -133,7 +142,7 @@ body {
 	font-size: 35px;
 }
 .string.active .string-line {
-    box-shadow: 0 0 10px #ff00004d;
+	box-shadow: 0 0 10px #ff00004d;
 }
 
 .key {
@@ -147,7 +156,7 @@ body {
 	letter-spacing: 1px;
 }
 svg.inline-icon {
-    vertical-align: middle;
-    margin-right: 10px;
-    fill: #b7b7b7;
+	vertical-align: middle;
+	margin-right: 10px;
+	fill: #b7b7b7;
 }
