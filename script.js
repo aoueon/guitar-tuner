@@ -6,6 +6,21 @@ TO DO:
 3. Press down arrow to play same note again manually.
 */
 
+const tuning = {
+	standard: {
+		label: "Standard",
+		notes: ['e2', 'a2', 'd3', 'g3', 'b3', 'e4']
+	},
+	dropD: {
+		label: "Drop D",
+		notes: ['d2', 'a2', 'd3', 'g3', 'b3', 'e4']
+	},
+	openD: {
+		label: "Open D",
+		notes: ['d2', 'a2', 'd3', 'f#3', 'a4', 'd4']
+	},
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	const strings = document.querySelectorAll('.string'),
